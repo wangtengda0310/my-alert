@@ -2,6 +2,10 @@
 
 FIXME
 
+-Dclojure.compiler.direct-linking=true
+
+[Direct linking](https://clojure.org/reference/compilation#directlinking)
+
 ## Prerequisites
 
 You will need [Leiningen][] 2.0.0 or above installed.
