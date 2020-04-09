@@ -9,7 +9,7 @@
                  [org.clojure/data.json "1.0.0"]
                  [com.zjiecode/wxpusher-client "2.1.0"]]
   :plugins [[lein-ring "0.12.5"]]
-  :ring {:handler my-alert.handler/app}
+  :ring {:handler my-alert.handler/app :port 80}
   :profiles
   {:dev {:dependencies [[javax.servlet/servlet-api "2.5"]
                         [ring/ring-mock "0.3.2"]]}})
