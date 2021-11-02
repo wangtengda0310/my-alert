@@ -7,9 +7,11 @@
                  [ring/ring-defaults "0.3.2"]
                  [ring/ring-json "0.5.0"]
                  [org.clojure/data.json "1.0.0"]
-                 [com.zjiecode/wxpusher-client "2.1.0"]]
+                 [com.zjiecode/wxpusher-client "2.1.0"]     ;;https://gitee.com/Angious/wxpusher-client https://github.com/wxpusher/wxpusher-sdk-java/
+                 [info.sunng/ring-jetty9-adapter "0.15.3"]]
   :plugins [[lein-ring "0.12.5"]]
-  :ring {:handler my-alert.handler/app :port 80}
+  :ring {:handler my-alert.handler/app :port 88}
+  :main my-alert.handler/start-server
   :profiles
   {:dev {:dependencies [[javax.servlet/servlet-api "2.5"]
                         [ring/ring-mock "0.3.2"]]}})

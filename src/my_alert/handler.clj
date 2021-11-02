@@ -3,12 +3,13 @@
             [compojure.route :as route]
             [ring.middleware.defaults :refer [wrap-defaults api-defaults]]
             [ring.middleware.json :refer [wrap-json-response wrap-json-body]]
-            [clojure.data.json :as json])
+            [clojure.data.json :as json]
+            [ring.adapter.jetty9 :refer [run-jetty]])
 
   (:import [com.zjiecode.wxpusher.client.bean Message MessageResult]
            [com.zjiecode.wxpusher.client WxPusher]))
 
-(def token (slurp "token"))
+(def token (or (System/getenv "token") (slurp "token")))
 (def uids {"UID_CleiaSJQi6OfTwW7NCo91zirGP34" "wangtd"})
 
 (defn push-weixin
@@ -47,3 +48,12 @@
   (-> app-routes
       wrap-json-body
       (wrap-defaults  api-defaults)))
+
+(defn start-server []
+  (run-jetty app {}))
+
+(defn -main
+  "I don't do a whole lot ... yet."
+  [& args]
+  (start-server)
+  (println "Hello, World!"))
