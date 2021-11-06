@@ -9,7 +9,8 @@
   (:import [com.zjiecode.wxpusher.client.bean Message MessageResult]
            [com.zjiecode.wxpusher.client WxPusher]))
 
-(def token (or (System/getenv "token") (slurp "token")))
+(declare token)
+
 (def uids {"UID_CleiaSJQi6OfTwW7NCo91zirGP34" "wangtd"})
 
 (defn push-weixin
@@ -50,6 +51,7 @@
       (wrap-defaults  api-defaults)))
 
 (defn start-server []
+  (def token (or (System/getenv "token") (slurp "token")))
   (run-jetty app {}))
 
 (defn -main
