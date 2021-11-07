@@ -1,4 +1,5 @@
 (ns my-alert.handler
+  (:gen-class)
   (:require [compojure.core :refer :all]
             [compojure.route :as route]
             [ring.middleware.defaults :refer [wrap-defaults api-defaults]]
