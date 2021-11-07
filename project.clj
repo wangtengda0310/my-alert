@@ -11,7 +11,7 @@
                  [info.sunng/ring-jetty9-adapter "0.15.3"]]
   :plugins [[lein-ring "0.12.5"]]
   :ring {:handler my-alert.handler/app :port 88}
-  :main my-alert.handler/start-server
+  :main my-alert.handler
   :profiles
   {:dev {:dependencies [[javax.servlet/servlet-api "2.5"]
                         [ring/ring-mock "0.3.2"]]}})
