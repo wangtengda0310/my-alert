@@ -1,6 +1,6 @@
-# my-alert
+# my-alert ![deploy-github-packages-maven](https://github.com/wangtengda0310/my-alert/actions/workflows/clojure.yml/badge.svg)
 
-FIXME
+[GitHub Packages](https://github.com/wangtengda0310/my-alert/pkgs/container/my-alert)
 
 -Dclojure.compiler.direct-linking=true
 
