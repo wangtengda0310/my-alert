@@ -3,7 +3,7 @@
   (:require [compojure.core :refer :all]
             [compojure.route :as route]
             [ring.middleware.defaults :refer [wrap-defaults api-defaults]]
-            [ring.middleware.json :refer [wrap-json-response wrap-json-body]]
+            [ring.middleware.json :refer [wrap-json-response wrap-json-body wrap-json-params]]
             [clojure.data.json :as json]
             [ring.adapter.jetty9 :refer [run-jetty]])
 
@@ -37,7 +37,7 @@
           ui (get data "uid")
           appName (get data "appName")]
       (str 123 )))
-
+  ; spring的restTemplate访问过来好像有些问题 需要wrap-json-params
   (POST "/" [from msg]
     (cond (not from) "from null"
       :else (for [uid uids]
@@ -49,6 +49,7 @@
 (def app
   (-> app-routes
       wrap-json-body
+      wrap-json-params                                      ; 没这个spring传过来的参数接受不到
       (wrap-defaults  api-defaults)))
 
 (defn start-server []
