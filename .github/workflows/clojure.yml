@@ -12,6 +12,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - run: docker images
     - name: Cache local Maven repository
       uses: actions/cache@v2
       with:
@@ -46,3 +47,4 @@ jobs:
         push: true
         tags: ${{ steps.meta.outputs.tags }}
         labels: ${{ steps.meta.outputs.labels }}
+    - run: docker images
