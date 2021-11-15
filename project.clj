@@ -8,7 +8,9 @@
                  [ring/ring-json "0.5.0"]
                  [org.clojure/data.json "1.0.0"]
                  [com.zjiecode/wxpusher-client "2.1.0"]     ;;https://gitee.com/Angious/wxpusher-client https://github.com/wxpusher/wxpusher-sdk-java/
-                 [info.sunng/ring-jetty9-adapter "0.15.3"]]
+                 [info.sunng/ring-jetty9-adapter "0.15.3"]
+                 ;; https://github.com/dakrone/clj-http
+                 [clj-http "3.12.3"]]
   :plugins [[lein-ring "0.12.5"]]
   :ring {:handler my-alert.handler/app :port 88}
   :main my-alert.handler
