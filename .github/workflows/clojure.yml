@@ -18,7 +18,7 @@ jobs:
     - run: echo GITHUB_JOB $GITHUB_JOB
     - run: echo GITHUB_JOB ${{ github.job }}
     - run: echo GITHUB_ACTION $GITHUB_ACTION
-    - run: echo GITHUB_ACTION ${{ GITHUB_ACTION }}
+    - run: echo GITHUB_ACTION ${{ github.action }}
     - name: Cache local Maven repository
       uses: actions/cache@v2
       with:
