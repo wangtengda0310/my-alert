@@ -15,7 +15,7 @@ jobs:
     - run: docker images
     - run: echo GITHUB_SHA ${ GITHUB_SHA }
     - run: echo GITHUB_JOB ${ GITHUB_JOB }
-    - run: echo GITHUB_ACTION ${{ GITHUB_ACTION }}
+    - run: echo GITHUB_ACTION ${ GITHUB_ACTION }
     - name: Cache local Maven repository
       uses: actions/cache@v2
       with:
