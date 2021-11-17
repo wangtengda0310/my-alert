@@ -14,11 +14,11 @@ jobs:
     steps:
     - run: docker images
     - run: echo GITHUB_SHA $GITHUB_SHA
-    - run: echo GITHUB_SHA ${{ github.sha }}
+    - run: echo github.sha ${{ github.sha }}
     - run: echo GITHUB_JOB $GITHUB_JOB
-    - run: echo GITHUB_JOB ${{ github.job }}
+    - run: echo github.job ${{ github.job }}
     - run: echo GITHUB_ACTION $GITHUB_ACTION
-    - run: echo GITHUB_ACTION ${{ github.action }}
+    - run: echo github.action ${{ github.action }}
     - name: Cache local Maven repository
       uses: actions/cache@v2
       with:
@@ -45,7 +45,7 @@ jobs:
       uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
       with:
         images: |
-          docker.itsnot.fun/wangtengda0310/my-alert:${{ github.sha }}
+          docker.itsnot.fun/wangtengda0310/my-alert
           ghcr.io/${{ github.repository }}
     - name: Build and push Docker images
       uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
